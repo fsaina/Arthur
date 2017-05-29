@@ -1,7 +1,6 @@
 # Sustav za predikciju vremenskih serija 'Arthur'
 
 Sustav za predikciju potrosnje elektricne energije Zvijezda d.d. skladista.
-mStart 'Inovativko' natjecanje 2017.
 
 ## Instalacija
 
