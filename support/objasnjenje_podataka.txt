@@ -1,0 +1,58 @@
+Poštovani kolege,
+
+ 
+
+sustav kojeg koristi Zvijezda obrađuje podatke o potrošnji električne energije sukladno načinu obračuna prema važećim mrežnim pravilima odnosno u skladu sa HEP-om (i ostalim opskrbljivačima). Sažeto kod troška za električnu energiju promatraju se tri parametra:
+
+1.       energija I tarife (skuplja, ljeti od 08-22) u kWh
+
+2.       energija II tarife (jeftinija, ljeti od 22-08) u kWh
+
+3.       maksimalna ostvarena prosječna snaga (15 minutni prosjek) u kW
+
+ 
+
+Kao što vidite pod stavkom 3 korisniku se naplaćuje maksimum ostvarene snage u nekom mjesecu no ne maksimum trenutne snage već maksimum prosječne snage unutar 15 minutnog intervala (interval određuje brojilo HEP-a). Zbog navedenog u našem sustavu se arhiviraju prosječne 15 minutne snage (xxx_15.csv) i to odvojeno za prvu tarifu (P15_1) te za drugu tarifu (P15_2). Snaga P15_1 ima neki iznos u periodu I tarife dok je u periodu II tarife jednaka nuli. Ista logika je i za P15_2. Kolone xxx_time predstavljaju vremensku os za pojedinu veličinu. Zbog načina uzrokovanja sustava nadzora te dvije osi su odvojene za P15_1 i P15_2. U osnovi ukupno vrijeme je unija P15_1 Time i P15_2 Time jer se ta dva vremena nikad ne preklapaju tj. ne postoji isti vremenski trenutak za te dvije vremenske osi.
+
+ 
+
+Drugi fileovi xxx_mth.csv predstavljaju mjesečna očitanja utroška za električnu energiju. Svakog 1 dana u mjesecu u 00:00:01 sustav očita stavke 1, 2 i 3 te ih spremi u arhivu. Dakle 01.05 sustav je očitao potrošnju za 4 mjesec i spremio. Koliko sam shvatio iz razgovora sa Dariom taj dio vam neće nužno biti potreban. Vama su za vaša razmatranja dovoljni xxx_15.csv fileovi.
+
+ 
+
+Načelno iz xxx_15.csv fileova vi trebate napraviti graf ovisnosti snaga sume P15_1 + P15_2 o uniji vremenskih osi P15_1 Time i P15_2 Time. Općenito površina ispod te krivulje (integral) predstavlja energiju. Dakle ako napravite integral za neki period (npr. 1 dan) tada ćete dobiti energiju utrošenu u tom danu. Na taj način ćete pokušati statistički pronaći ovisnost potrošnje (kWh) te maksimalne snage (kW) o vremenskim uvjetima. Mislim da bi vam za svu tu analizu bio dovoljan samo excel.
+
+ 
+
+Podaci su za vremenski period od 01.03.2015 do 03.05.2017.
+
+ 
+
+Oznake RU211, RU212 i STARI_GRO su oznake mjernih mjesta, a njihovo značenje će vam točno definirati Dario. Koliko ja znam RU211 i RU212 su mjerenja potrošnje rashladnih uređaja skladišta dok je STARI_GRO mjerilo potrošnje cijelog skladišta
+
+
+
+_________
+
+
+Poštovani,
+
+ 
+
+RU211  znači Rashladni uređaj 211 (to je njegova oznaka u nekoj tehnološkoj shemi)
+
+RU212  znači Rashladni uređaj 212 (to je njegova oznaka u nekoj tehnološkoj shemi)
+
+STARI GRO znači Glavni razvodni ormar
+
+ 
+
+Zbirno RU211+ RU212+Stari GRO(80%) čine potrošnju rashladnih uređaja instaliranih na skladištu u kWh
+
+ 
+
+Lp
+
+ 
+
+Dario Požgajec
