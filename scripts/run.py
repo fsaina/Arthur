@@ -103,6 +103,9 @@ if __name__=='__main__':
 
     X_train, Y_train, X_test, Y_test, standardScaler = lstm.load_data('./DATA_INPUT.data', seq_len, True, True, train_test_mul=0.95)
 
+    print("Bok")
+    print(len(X_train) + len(X_test))
+
     base = "./Graph/"
     random_num = randint(0,99999999)
     full_path = base + str(random_num)
