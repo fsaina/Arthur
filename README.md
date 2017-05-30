@@ -1,7 +1,6 @@
 # Sustav za predikciju vremenskih serija 'Arthur'
 
 Sustav za predikciju potrosnje elektricne energije Zvijezda d.d. skladista.
-mStart 'Inovativko' natjecanje 2017.
 
 ## Instalacija
 
@@ -15,32 +14,20 @@ izbjegavanja rucne instalacije niza paketa.
 Sustav je javno dostupan za preuzimanje sa Docker Hub-a (hub.docker.com).
 Ime repositorija je fsaina/arthur te ga najprije preuzmite lokalno sa:
 
-docker pull fsaina/arthur
+docker pull fsaina/arthur:latest
 
 Ovo ce pokrenuti preuzimanje slike, te kada zavrsi - mozete pokrenuti
 jednu instancu sa:
 
 docker run -p 8000:8000 fsaina/arthur
 
-Ovime se pokrenuo Django servefr
+Ovime se pokrenuo Django server
 
 nakon par trenutaka Django server ce se pokrenuti sa ucitanim sustavom 
 te mozete pristupiti aplikaciji preko svog internet preglednika na:
 
 localhost:8000
 
-
-
-Dobivenu docker sliku (NAZIV) potrebno je ucitati u Docker sa:
-
-<naredba>
-
-te zatim pokrenuti instancu te slike sa:
-
-docker run -p 8000:8000 zvijezda_dashboard:latest
-
-
-localhost:8000
 
 ## Struktura direktorija
 Direktoriji je podijeljen na 4 poddirektorija, redom:
@@ -53,9 +40,3 @@ Direktoriji je podijeljen na 4 poddirektorija, redom:
 
 Filip Saina
 filip.saina@gmail.com
-
-
-
-docker build -t zvijezda_dashboard .
-
-docker run -p 3000:8000 zvijezda_dashboard:latest
